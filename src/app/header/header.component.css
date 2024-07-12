@@ -1,0 +1,27 @@
+.logo {
+    width: 100px;
+    margin: 0;
+}
+
+header {
+    background-color: black;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1, li a {
+    color: #e07e00;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    background-color: black;
+}
+li a{
+    text-decoration: none;
+    font-size: 1.5em;
+}
