@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { HorseDetailComponent } from './barn/horse-detail/horse-detail.component';
 import { HorseEditComponent } from './barn/horse-edit/horse-edit.component';
 import { HorseListComponent } from './barn/horse-list/horse-list.component';
+import { FeaturedBreedComponent } from './home/featured-breed/featured-breed.component';
 
 
 @NgModule({
@@ -19,11 +21,13 @@ import { HorseListComponent } from './barn/horse-list/horse-list.component';
     HomeComponent,
     HorseDetailComponent,
     HorseEditComponent,
-    HorseListComponent
+    HorseListComponent,
+    FeaturedBreedComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

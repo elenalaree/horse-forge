@@ -1,0 +1,28 @@
+
+
+.featured {
+    width: 90%;
+    margin: auto;
+
+}
+
+h3 {
+    text-align: center;
+}
+
+
+img {
+    width:100%;
+    padding: auto;
+}
+@media screen and (min-width: 600px) {
+    .featured {
+        width: 50%;
+        margin: auto;
+    
+    }
+    img {
+        width: 80%;
+    }
+    
+}

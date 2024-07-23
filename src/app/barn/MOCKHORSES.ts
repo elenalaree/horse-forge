@@ -8,8 +8,8 @@ export const MOCKHORSES: any[] = [
         "weight": 900,
         "breed": "Arabian",
         "color": "Chestnut",
-        "gender": "Stallion",
-        "imageUrl": "image"
+        "gender": "Mare",
+        "imageUrl": "../../assets/images/owned/chestnutArabian.webp"
     },
     {   "id": 2,
         "name": "Hollywood Spirit",
@@ -19,7 +19,7 @@ export const MOCKHORSES: any[] = [
         "breed": "Quarter Horse",
         "color": "Bay",
         "gender": "Stallion",
-        "imageUrl": "image"
+        "imageUrl": "../../assets/images/owned/bayQuarterHorse.webp"
     },
     {   "id": 3,
         "name": "Midnight",
@@ -29,7 +29,7 @@ export const MOCKHORSES: any[] = [
         "breed": "Friesian",
         "color": "Black",
         "gender": "Mare",
-        "imageUrl": "image"
+        "imageUrl": "../../assets/images/owned/fressian-mare.webp"
     },
     {   "id": 4,
         "name": "Grace",
@@ -39,7 +39,7 @@ export const MOCKHORSES: any[] = [
         "breed": "Thoroughbred",
         "color": "Gray",
         "gender": "Mare",
-        "imageUrl": "image"
+        "imageUrl": "../../assets/images/owned/thoroughbred-mare.webp"
     },
     {   "id": 5,
         "name": "Duke",
@@ -49,7 +49,7 @@ export const MOCKHORSES: any[] = [
         "breed": "Andalusian",
         "color": "Gray",
         "gender": "Stallion",
-        "imageUrl": "image"
+        "imageUrl": "../../assets/images/owned/andalusian-stallion.webp"
     },
     {   "id": 6,
         "name": "Bella",
@@ -59,7 +59,7 @@ export const MOCKHORSES: any[] = [
         "breed": "Suffolk Punch",
         "color": "Chestnut",
         "gender": "Mare",
-        "imageUrl": "image"
+        "imageUrl": "../../assets/images/owned/suffolk-punch-mare.webp"
     },
     {   "id": 7,
         "name": "Max",
@@ -69,7 +69,7 @@ export const MOCKHORSES: any[] = [
         "breed": "Shire",
         "color": "Black",
         "gender": "Gelding",
-        "imageUrl": "image"
+        "imageUrl": "../../assets/images/owned/shire-male.webp"
     },
     {   "id": 8,
         "name": "Luna",
@@ -78,7 +78,8 @@ export const MOCKHORSES: any[] = [
         "weight": 1280,
         "breed": "Gypsy Vanner",
         "color": "Black and white pibald",
-        "gender": "Mare"
+        "gender": "Mare",
+        "imageUrl": "../../assets/images/owned/gypsy-mare.webp"
     },
     {   "id": 9,
         "name": "Charlie",
@@ -88,7 +89,7 @@ export const MOCKHORSES: any[] = [
         "breed": "Welsh Pony",
         "color": "Gray",
         "gender": "Gelding",
-        "imageUrl": "image"
+        "imageUrl": "../../assets/images/owned/welsh-gray.webp"
     },
     {   "id": 10,
         "name": "Rosie",
@@ -96,9 +97,9 @@ export const MOCKHORSES: any[] = [
         "age": 5,
         "weight": 700,
         "breed": "Pony of the Americas",
-        "color": "Bay",
+        "color": "palamino appaloosa",
         "gender": "Mare",
-        "imageUrl": "image"
+        "imageUrl": "../../assets/images/owned/poa-mare.webp"
     }
 ]
 

@@ -1,0 +1,15 @@
+<div class="featured">
+    <h3>Featured Breed</h3>
+    <div *ngIf="breed; else loading">
+        <div class="eachHorse">
+            <img [src]="breed.imgUrl" alt="Picture of {{ breed.name }}">
+            <h3>{{ breed.name }}</h3>
+            <p>{{ breed.classification }} -- {{ breed.average_age }} years old</p>
+            <p>{{ breed.colorings }} -- {{ breed.height }} -- {{ breed.weight }} pounds</p>
+            <p>{{ breed.interesting_fact }}</p>
+        </div>
+    </div>
+    <ng-template #loading>
+        <p>Loading breed...</p>
+    </ng-template>
+</div>

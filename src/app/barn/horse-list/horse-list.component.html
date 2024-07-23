@@ -1,1 +1,40 @@
-<p>horse-list works!</p>
+<div class="container-fluid col-md-10">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <h2 class="pad-left-right">My Horses</h2>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="input-group pull-left pad-left-right col-xs-7">
+                            
+                            <input type="text" class="form-control" placeholder="Enter a search value"
+                                [(ngModel)]="term" #searchBox (keyup)="search(searchBox.value)">
+                            <div class="glyphicon glyphicon-search input-group-addon" (click)="search(searchBox.value)">
+                            </div>
+                        </div>
+                        <div class="pull-right pad-left-right">
+                            <a class="btn btn-success" [routerLink]="['new']">New Horse</a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <ul>
+                <!-- Apply the ContactsFilterPipe to the list of contacts -->
+                <li *ngFor="let horse of horses" class="horseContainer">
+                    <div class="eachHorse">
+                        <img [src]="horse.imageUrl" alt="Picture of {{horse.name}}">
+                        <h3>{{ horse.name }}</h3>
+                        <p>{{horse.breed}} -- {{horse.age}} years old -- {{horse.gender}}</p>
+                        <p>{{horse.color}} -- {{horse.height}} -- {{horse.weight}} pounds</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

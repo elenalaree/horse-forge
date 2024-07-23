@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Horse } from '../horse.model';
 import { Subscription} from 'rxjs';
+import { MOCKHORSES } from '../MOCKHORSES';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class HorseListComponent implements OnInit {
   horses: Horse[] = []
   subscription: Subscription;
   constructor(){
-
+    this.horses = MOCKHORSES;
   }
   ngOnInit(): void {
     
@@ -21,4 +22,14 @@ export class HorseListComponent implements OnInit {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+
+  
+  term:string = '';
+
+  search(value: string) {
+
+    this.term = value;
+    
+    }
+
 }
