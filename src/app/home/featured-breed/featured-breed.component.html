@@ -1,5 +1,5 @@
 <div class="featured">
-    <h3>Featured Breed</h3>
+    <h3 class="d-flex justify-content-center">Featured Breed</h3>
     <div *ngIf="breed; else loading">
         <div class="eachHorse">
             <img [src]="breed.imgUrl" alt="Picture of {{ breed.name }}">
