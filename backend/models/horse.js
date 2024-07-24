@@ -38,4 +38,4 @@ const horseSchema = mongoose.Schema({
 });
 
 // Create and export the model
-module.exports = mongoose.model('Horse', horseSchema);
+module.exports = mongoose.model('Horse', horseSchema, 'myBarn');

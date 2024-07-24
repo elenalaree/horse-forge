@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
     next();
 });
 
@@ -39,10 +39,9 @@ app.get('/api/breeds', (req, res, next) => {
 });
 
 // Route to get horses
-app.get('/api/horses', (req, res, next) => {
+app.get('/api/myBarn', (req, res, next) => {
     Horse.find()
         .then(horses => {
-            console.log(horses)
             res.status(200).json({
                 message: "horses Successfully fetched.",
                 horses: horses
@@ -55,13 +54,24 @@ app.get('/api/horses', (req, res, next) => {
         });
         
 });
-
+app.get('/api/myBarn/:id', (req, res) => {
+    const horseId = req.params.id;
+    Horse.findById(horseId)
+        .then(horse => {
+            if (!horse) {
+                return res.status(404).json({ message: 'Horse not found' });
+            }
+            res.status(200).json({ message: 'Horse found', horse });
+        })
+        .catch(err => {
+            res.status(500).json({ message: 'Error fetching horse', error: err });
+        });
+});
 // Route to create a new horse
-app.post('/api/horses', async (req, res, next) => {
+app.post('/api/myBarn', async (req, res, next) => {
     try {
         // Create a new Horse instance
         const horse = new Horse({
-            id: req.body.id,
             name: req.body.name,
             height: req.body.height,
             age: req.body.age,
@@ -74,7 +84,7 @@ app.post('/api/horses', async (req, res, next) => {
 
         // Save the horse to the database
         const result = await horse.save();
-        console.log(result);
+        
 
         // Respond with success message
         res.status(201).json({
@@ -89,6 +99,70 @@ app.post('/api/horses', async (req, res, next) => {
         });
     }
 });
+
+app.put('/api/myBarn/:id', async (req, res, next) => {
+    try {
+        const horseId = req.params.id;
+
+        // Find the horse by ID and update it
+        const updatedHorse = await Horse.findByIdAndUpdate(
+            horseId,
+            {
+                name: req.body.name,
+                height: req.body.height,
+                age: req.body.age,
+                weight: req.body.weight,
+                breed: req.body.breed,
+                color: req.body.color,
+                gender: req.body.gender,
+                imageUrl: req.body.imageUrl
+            },
+            { new: true } // Return the updated document
+        );
+
+        if (!updatedHorse) {
+            return res.status(404).json({ message: 'Horse not found' });
+        }
+
+        // Respond with the updated horse
+        res.status(200).json({
+            message: 'Horse updated successfully!',
+            horse: updatedHorse
+        });
+    } catch (error) {
+        console.error('Error updating horse:', error);
+        res.status(500).json({
+            message: 'Failed to update horse',
+            error: error.message
+        });
+    }
+});
+
+app.delete('/api/myBarn/:id', async (req, res, next) => {
+    try {
+        const horseId = req.params.id;
+
+        // Find and delete the horse by ID
+        const deletedHorse = await Horse.findByIdAndDelete(horseId);
+
+        if (!deletedHorse) {
+            return res.status(404).json({ message: 'Horse not found' });
+        }
+
+        // Respond with success message
+        res.status(200).json({
+            message: 'Horse deleted successfully!'
+        });
+    } catch (error) {
+        console.error('Error deleting horse:', error);
+        res.status(500).json({
+            message: 'Failed to delete horse',
+            error: error.message
+        });
+    }
+});
+
+
 
 // Export the app
 module.exports = app;

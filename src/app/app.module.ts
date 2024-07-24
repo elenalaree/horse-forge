@@ -11,7 +11,7 @@ import { HorseDetailComponent } from './barn/horse-detail/horse-detail.component
 import { HorseEditComponent } from './barn/horse-edit/horse-edit.component';
 import { HorseListComponent } from './barn/horse-list/horse-list.component';
 import { FeaturedBreedComponent } from './home/featured-breed/featured-breed.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { FeaturedBreedComponent } from './home/featured-breed/featured-breed.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

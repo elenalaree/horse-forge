@@ -1,5 +1,5 @@
 export class Horse {
-    public id: string;
+    public id?: string;
     public name: string;
     public height: string;
     public age: string;

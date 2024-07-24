@@ -7,14 +7,13 @@ import { HorseDetailComponent } from './barn/horse-detail/horse-detail.component
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent
-  },
-  { path: 'my-barn', component: BarnComponent, children: [
-    { path: 'new', component: HorseEditComponent },
-    { path: ':id', component: HorseDetailComponent },
-    { path: ':id/edit', component: HorseEditComponent }
-]
-  }
+  { path: 'home', component: HomeComponent},
+  { path: 'myBarn', component: BarnComponent},
+  { path: 'myBarn/new', component: HorseEditComponent },
+  { path: 'myBarn/:id', component: HorseDetailComponent },
+  { path: 'myBarn/:id/edit', component: HorseEditComponent }
+
+  
 ];
 
 @NgModule({

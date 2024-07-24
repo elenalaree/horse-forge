@@ -1,6 +1,6 @@
 .eachHorse {
     border: 1px solid saddlebrown;
-    width: 80%;
+    width: 100%;
     margin: 5px auto;
     padding: 10px;
     text-align: center;
@@ -13,4 +13,18 @@
 img {
     max-width: 80%;
     margin: auto;
+}
+a {
+    text-decoration: none;
+    color: #d8a25b;
+}
+.orange {
+    background-color:#d8a25b ;
+    color: black;
+}
+.orange:hover {
+    background-color: #e07e00
+}
+ul {
+    list-style-type: none;
 }

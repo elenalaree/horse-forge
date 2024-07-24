@@ -1,0 +1,37 @@
+.eachHorse {
+    border: 1px solid saddlebrown;
+    width: 100%;
+    margin: 5px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.orange {
+    background-color:#d8a25b ;
+    color: black;
+}
+.orange:hover {
+    background-color: #e07e00
+}
+
+
+.brown {
+    background-color:saddlebrown;
+    color: white
+}
+
+.brown:hover {
+    background-color:rgb(145, 81, 36);
+    color: white
+}
+
+.button-holder {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+img {
+    max-width: 80%;
+    margin: auto;
+}
+

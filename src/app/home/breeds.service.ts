@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Breed } from './breeds.model'; // Adjust the path as needed
+import { Breed } from './breeds.model'; 
 
 @Injectable({
     providedIn: 'root'
 })
 export class BreedService {
-    private apiUrl = 'http://localhost:3000/api/breeds'; // Adjust if needed
+    private apiUrl = 'http://localhost:3000/api/breeds';
 
     constructor(private http: HttpClient) { }
 
@@ -18,7 +18,6 @@ export class BreedService {
                 if (!Array.isArray(response.breeds)) {
                     throw new Error('Expected "breeds" to be an array');
                 }
-                console.log(response)
                 // Transform the _id to id
                 const transformedData = response.breeds.map(breed => ({
                     ...breed,

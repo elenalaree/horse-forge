@@ -6,6 +6,9 @@
                     <div class="row">
                         <h2 class="pad-left-right">My Horses</h2>
                     </div>
+                    <div class="d-flex justify-content-center">
+                        <a class="btn orange" [routerLink]="['/myBarn/new']">Add New Horse</a>
+                    </div>
                     <!-- <div class="row">
                         <div class="input-group pull-left pad-left-right col-xs-7">
                             
@@ -23,16 +26,18 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12">
+        <div>
             <ul>
                 <!-- Apply the ContactsFilterPipe to the list of contacts -->
                 <li *ngFor="let horse of horses" class="horseContainer">
-                    <div class="eachHorse">
-                        <img [src]="horse.imageUrl" alt="Picture of {{horse.name}}">
-                        <h3>{{ horse.name }}</h3>
-                        <p>{{horse.breed}} -- {{horse.age}} years old -- {{horse.gender}}</p>
-                        <p>{{horse.color}} -- {{horse.height}} -- {{horse.weight}} pounds</p>
-                    </div>
+                    <a [routerLink]="['/myBarn', horse.id]">
+                        <div class="eachHorse">
+                            <img [src]="horse.imageUrl" alt="Picture of {{horse.name}}">
+                            <h3>{{ horse.name }}</h3>
+                            <p>{{ horse.breed }} -- {{ horse.age }} years old -- {{ horse.gender }}</p>
+                            <p>{{ horse.color }} -- {{ horse.height }} -- {{ horse.weight }} pounds</p>
+                        </div>
+                    </a>
                 </li>
             </ul>
         </div>

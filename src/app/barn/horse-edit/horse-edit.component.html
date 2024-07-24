@@ -1,1 +1,130 @@
-<p>horse-edit works!</p>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form id="horse-edit" #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="name">Horse Name:</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        class="form-control" 
+                        [(ngModel)]="horse.name" 
+                        #name="ngModel" 
+                        required
+                    >
+                    <div *ngIf="name.invalid && name.touched" class="text-danger">
+                        Horse Name is required.
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="height">Height:</label>
+                    <input 
+                        type="text" 
+                        id="height" 
+                        name="height" 
+                        class="form-control" 
+                        [(ngModel)]="horse.height"
+                    >
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="age">Age:</label>
+                    <input 
+                        type="text" 
+                        id="age" 
+                        name="age" 
+                        class="form-control" 
+                        [(ngModel)]="horse.age"
+                    >
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="weight">Weight:</label>
+                    <input 
+                        type="text" 
+                        id="weight" 
+                        name="weight" 
+                        class="form-control" 
+                        [(ngModel)]="horse.weight"
+                    >
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="breed">Breed:</label>
+                    <input 
+                        type="text" 
+                        id="breed" 
+                        name="breed" 
+                        class="form-control" 
+                        [(ngModel)]="horse.breed"
+                    >
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="color">Color:</label>
+                    <input 
+                        type="text" 
+                        id="color" 
+                        name="color" 
+                        class="form-control" 
+                        [(ngModel)]="horse.color"
+                    >
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="gender">Gender:</label>
+                    <input 
+                        type="text" 
+                        id="gender" 
+                        name="gender" 
+                        class="form-control" 
+                        [(ngModel)]="horse.gender"
+                    >
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="imageUrl">Image URL:</label>
+                    <input 
+                        type="text" 
+                        id="imageUrl" 
+                        name="imageUrl" 
+                        class="form-control" 
+                        [(ngModel)]="horse.imageUrl" 
+                        #imageUrl="ngModel" 
+                        required
+                    >
+                    <div *ngIf="imageUrl.invalid && imageUrl.touched" class="text-danger">
+                        Image URL is required.
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="f.invalid" class="alert alert-danger">
+                Please fill in all required fields.
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 btn-toolbar">
+                    <button class="btn btn-success" type="submit" [disabled]="f.invalid">Save</button>
+                    <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
